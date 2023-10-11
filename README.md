@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# [CoDox](https://codox.vercel.app/) - a starter template for modern web development !
 
-## Getting Started
+<kbd>
+<a href="https://codox.vercel.app">
+  <img alt="CoDox – A starter template for modern web development with nextjs 13 (app route), tailwindcss, typescript, trpc, clerk auth, and prisma." src="https://codox.vercel.app/og-image.png">
+</a>
+</kbd>
 
-First, run the development server:
+### A starter template for modern web development with nextjs 13 (app route), tailwindcss, typescript, trpc, clerk auth, and prisma.
+
+
+## Tech Stacks 💻
+
+- ⚡ [Next.js](https://nextjs.org) 13 with App Router 
+- 🔥 [TypeScript](https://www.typescriptlang.org)  — JavaScript with syntax for types.
+- 💎 [Tailwind CSS](https://tailwindcss.com) —  A utility-first CSS framework
+- 🗃 [Shadcn UI](https://ui.shadcn.com/) —  Beautifully designed components built with Radix UI and Tailwind CSS.
+- 🌐 [tRPC](https://trpc.io) —  End-to-end typesafe APIs
+
+- 🔒 [Clerk](https://clerk.com?utm_source=github&utm_medium=sponsorship&utm_campaign=nextjs-boilerplate) — Auth & User components
+- 📦 [Primsa](https://www.prisma.io/) — Next-generation Node.js and TypeScript ORM
+- ♻️ [T3 Env](https://env.t3.gg/) — Type-safe environment variables with 
+- 📏 [ESLint](https://eslint.org) — To find and fix problems in your code
+- 💖 [Prettier](https://prettier.io) — Code Formatter for consistent style
+
+
+## Setup Locally 🚀
+
+1. Clone the repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/sujjeee/codox.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies using pnpm
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. Start the development server
 
-## Learn More
+```bash
+pnpm dev
+```
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Preview 👀
+See the preview  —  <a href="https://codox.vercel.app">CoDox</a>

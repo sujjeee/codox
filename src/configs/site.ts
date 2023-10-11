@@ -1,7 +1,5 @@
 export type SiteConfig = typeof siteConfig
 
-
-
 export const siteConfig = {
   name: "Modern web development stacks",
   description:

@@ -13,6 +13,7 @@ export default function TextAnimation() {
 
         // Clean up interval on unmount
         return () => clearInterval(interval);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     return (
         <AnimatePresence mode="wait">

@@ -13,7 +13,7 @@ interface CTCProps {
     label: string
 
 }
-export function CopyButton({ value, ...props }: ButtonProps) {
+export function CopyButton() {
     const [isCopied, setIsCopied] = React.useState(false)
 
     function copytoclipboard({ text, label }: CTCProps) {

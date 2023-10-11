@@ -21,7 +21,7 @@ export default async function page() {
             }
         })
 
-        if (!dbUser) redirect('/auth-callback?origin=/')
+        if (!dbUser) redirect('/auth-callback?origin=/dashboard')
     }
 
     return (

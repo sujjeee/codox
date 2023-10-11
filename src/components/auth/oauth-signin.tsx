@@ -29,7 +29,7 @@ const OAuthSignin: React.FC<OAuthSigninProps> = ({ }) => {
             await signIn.authenticateWithRedirect({
                 strategy: provider,
                 redirectUrl: "/sso-callback",
-                redirectUrlComplete: "/",
+                redirectUrlComplete: "/dashboard",
             })
         } catch (error) {
             setIsLoading(null)

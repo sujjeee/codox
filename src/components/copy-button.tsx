@@ -3,7 +3,7 @@
 import * as React from "react"
 import { CheckIcon, CopyIcon } from "@radix-ui/react-icons"
 
-import { Button, type ButtonProps } from "@/components/ui/button"
+import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu"
 import { toast } from "sonner"
 import { event } from "@/lib/gtags"
@@ -11,8 +11,8 @@ import { event } from "@/lib/gtags"
 interface CTCProps {
     text: string
     label: string
-
 }
+
 export function CopyButton() {
     const [isCopied, setIsCopied] = React.useState(false)
 

@@ -2,11 +2,15 @@ import OAuthSignin from '@/components/auth/oauth-signin'
 import { Icons } from '@/components/icons'
 import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import { currentUser } from '@clerk/nextjs'
 import { ChevronLeft } from 'lucide-react'
 import Link from 'next/link'
+import { redirect } from 'next/navigation'
 import React from 'react'
 
-export default function Signin() {
+export default async function Signin() {
+    const user = await currentUser()
+    if (user) redirect('/')
     return (
         <div className="container flex h-[90vh] w-full flex-col items-center justify-center max-w-6xl relative">
             <Link

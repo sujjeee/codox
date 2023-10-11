@@ -13,16 +13,15 @@
 
 - ⚡ [Next.js](https://nextjs.org) 13 with App Router 
 - 🔥 [TypeScript](https://www.typescriptlang.org)  — JavaScript with syntax for types.
-- 💎 [Tailwind CSS](https://tailwindcss.com) —  A utility-first CSS framework
+- 💅 [Tailwind CSS](https://tailwindcss.com) —  A utility-first CSS framework
 - 🗃 [Shadcn UI](https://ui.shadcn.com/) —  Beautifully designed components built with Radix UI and Tailwind CSS.
 - 🌐 [tRPC](https://trpc.io) —  End-to-end typesafe APIs
-
 - 🔒 [Clerk](https://clerk.com?utm_source=github&utm_medium=sponsorship&utm_campaign=nextjs-boilerplate) — Auth & User components
 - 📦 [Primsa](https://www.prisma.io/) — Next-generation Node.js and TypeScript ORM
 - ♻️ [T3 Env](https://env.t3.gg/) — Type-safe environment variables with 
-- 📏 [ESLint](https://eslint.org) — To find and fix problems in your code
+- 🛠 [ESLint](https://eslint.org) — To find and fix problems in your code
 - 💖 [Prettier](https://prettier.io) — Code Formatter for consistent style
-
+- 📊 [Google Analytics ](https://analytics.google.com/) —  A web analytics service that tracks and reports website traffic
 
 ## Setup Locally 🚀
 

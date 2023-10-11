@@ -7,6 +7,7 @@ import { Toaster } from '@/components/ui/toaster'
 import { ClerkProvider } from '@clerk/nextjs'
 import { dark } from '@clerk/themes';
 import TrpcProvider from '@/components/providers/trpc-provider'
+import GoogleAnalytics from '@/google-analytics'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -36,6 +37,7 @@ export default function RootLayout({
               disableTransitionOnChange
             >
               {children}
+              <GoogleAnalytics />
               <Toaster />
             </ThemeProvider>
           </body>

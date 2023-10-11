@@ -6,16 +6,27 @@ import { CheckIcon, CopyIcon } from "@radix-ui/react-icons"
 import { Button, type ButtonProps } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu"
 import { toast } from "sonner"
+import { event } from "@/lib/gtags"
 
+interface CTCProps {
+    text: string
+    label: string
+
+}
 export function CopyButton({ value, ...props }: ButtonProps) {
     const [isCopied, setIsCopied] = React.useState(false)
 
-    function copytoclipboard(texttocopy: string) {
+    function copytoclipboard({ text, label }: CTCProps) {
         if (typeof window === "undefined") return
         setIsCopied(true)
-        void window.navigator.clipboard.writeText(texttocopy?.toString() ?? "")
+        void window.navigator.clipboard.writeText(text?.toString() ?? "")
         setTimeout(() => setIsCopied(false), 2000)
         toast.success('Copied to clipboard')
+        event({
+            category: 'Copy Clicks',
+            action: 'clicks',
+            label: label,
+        });
     }
 
     return (
@@ -36,11 +47,17 @@ export function CopyButton({ value, ...props }: ButtonProps) {
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
                 <DropdownMenuItem
-                    onClick={() => copytoclipboard("https://github.com/sujjeee/codox.git")}>
+                    onClick={() => copytoclipboard({
+                        text: "https://github.com/sujjeee/codox.git",
+                        label: "https_copy_click"
+                    })}>
                     Https
                 </DropdownMenuItem>
                 <DropdownMenuItem
-                    onClick={() => copytoclipboard("gh repo clone sujjeee/codox")}>
+                    onClick={() => copytoclipboard({
+                        text: "gh repo clone sujjeee/codox",
+                        label: "ghcli_copy_click"
+                    })}>
                     GitHub CLI
                 </DropdownMenuItem>
             </DropdownMenuContent>

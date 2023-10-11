@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
 export default function TextAnimation() {
-    const words = ["NextJS", "ShadcnUI", "Tailwind", "tRPC", "Clerk", "Prisma"];
+    const words = ["NextJS", "ShadcnUI", "Tailwind", "Typescript", "tRPC", "Clerk", "Prisma"];
     const [index, setIndex] = React.useState(0);
 
     React.useEffect(() => {

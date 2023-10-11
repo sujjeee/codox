@@ -2,11 +2,12 @@
 
 import React from 'react'
 import { ThemeToggle } from '@/components/theme-toggle'
-import { Button } from '@/components/ui/button'
+import { Button, buttonVariants } from '@/components/ui/button'
 import Link from 'next/link'
 import useWindow from '@/hooks/use-window'
 import { UserButton, useAuth } from '@clerk/nextjs'
 import { usePathname } from 'next/navigation'
+import { Github } from 'lucide-react'
 
 export default function SiteHeader() {
   const { isDesktop } = useWindow()
@@ -28,6 +29,17 @@ export default function SiteHeader() {
           }
         </h2>
         <div className="flex justify-center items-center gap-2" >
+          <Link
+            target='_blank'
+            href="http://github.com/sujjeee/codox"
+            className={buttonVariants({
+              size: 'icon',
+              variant: 'outline'
+            })}>
+            <Github className='h-5 w-5' />
+
+            <span className="sr-only">github profile</span>
+          </Link>
           <ThemeToggle />
           {
             user?.userId ? (

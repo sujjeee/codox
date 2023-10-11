@@ -14,6 +14,9 @@ dependencies:
   '@clerk/types':
     specifier: ^3.54.0
     version: 3.54.0
+  '@prisma/client':
+    specifier: 5.4.2
+    version: 5.4.2(prisma@5.4.2)
   '@radix-ui/react-dropdown-menu':
     specifier: ^2.0.6
     version: 2.0.6(@types/react-dom@18.2.13)(@types/react@18.2.28)(react-dom@18.2.0)(react@18.2.0)
@@ -26,6 +29,21 @@ dependencies:
   '@t3-oss/env-nextjs':
     specifier: ^0.7.0
     version: 0.7.0(typescript@5.2.2)(zod@3.22.4)
+  '@tanstack/react-query':
+    specifier: ^4.36.1
+    version: 4.36.1(react-dom@18.2.0)(react@18.2.0)
+  '@trpc/client':
+    specifier: ^10.40.0
+    version: 10.40.0(@trpc/server@10.40.0)
+  '@trpc/next':
+    specifier: ^10.40.0
+    version: 10.40.0(@tanstack/react-query@4.36.1)(@trpc/client@10.40.0)(@trpc/react-query@10.40.0)(@trpc/server@10.40.0)(next@13.5.4)(react-dom@18.2.0)(react@18.2.0)
+  '@trpc/react-query':
+    specifier: ^10.40.0
+    version: 10.40.0(@tanstack/react-query@4.36.1)(@trpc/client@10.40.0)(@trpc/server@10.40.0)(react-dom@18.2.0)(react@18.2.0)
+  '@trpc/server':
+    specifier: ^10.40.0
+    version: 10.40.0
   class-variance-authority:
     specifier: ^0.7.0
     version: 0.7.0
@@ -59,6 +77,9 @@ dependencies:
   tailwindcss-animate:
     specifier: ^1.0.7
     version: 1.0.7(tailwindcss@3.3.3)
+  zod:
+    specifier: ^3.22.4
+    version: 3.22.4
 
 devDependencies:
   '@types/node':
@@ -82,6 +103,9 @@ devDependencies:
   postcss:
     specifier: ^8
     version: 8.4.31
+  prisma:
+    specifier: ^5.4.2
+    version: 5.4.2
   tailwindcss:
     specifier: ^3
     version: 3.3.3
@@ -456,6 +480,28 @@ packages:
       tslib: 2.6.2
       webcrypto-core: 1.7.7
     dev: false
+
+  /@prisma/client@5.4.2(prisma@5.4.2):
+    resolution: {integrity: sha512-2xsPaz4EaMKj1WS9iW6MlPhmbqtBsXAOeVttSePp8vTFTtvzh2hZbDgswwBdSCgPzmmwF+tLB259QzggvCmJqA==}
+    engines: {node: '>=16.13'}
+    requiresBuild: true
+    peerDependencies:
+      prisma: '*'
+    peerDependenciesMeta:
+      prisma:
+        optional: true
+    dependencies:
+      '@prisma/engines-version': 5.4.1-2.ac9d7041ed77bcc8a8dbd2ab6616b39013829574
+      prisma: 5.4.2
+    dev: false
+
+  /@prisma/engines-version@5.4.1-2.ac9d7041ed77bcc8a8dbd2ab6616b39013829574:
+    resolution: {integrity: sha512-wvupDL4AA1vf4TQNANg7kR7y98ITqPsk6aacfBxZKtrJKRIsWjURHkZCGcQliHdqCiW/hGreO6d6ZuSv9MhdAA==}
+    dev: false
+
+  /@prisma/engines@5.4.2:
+    resolution: {integrity: sha512-fqeucJ3LH0e1eyFdT0zRx+oETLancu5+n4lhiYECyEz6H2RDskPJHJYHkVc0LhkU4Uv7fuEnppKU3nVKNzMh8g==}
+    requiresBuild: true
 
   /@radix-ui/primitive@1.0.1:
     resolution: {integrity: sha512-yQ8oGX2GVsEYMWGxcovu1uGWPCxV5BFfeeYxqPmuAzUyLT9qmaMXSAhXpb0WrspIeqYzdJpkh2vHModJPgRIaw==}
@@ -967,6 +1013,77 @@ packages:
       '@t3-oss/env-core': 0.7.0(typescript@5.2.2)(zod@3.22.4)
       typescript: 5.2.2
       zod: 3.22.4
+    dev: false
+
+  /@tanstack/query-core@4.36.1:
+    resolution: {integrity: sha512-DJSilV5+ytBP1FbFcEJovv4rnnm/CokuVvrBEtW/Va9DvuJ3HksbXUJEpI0aV1KtuL4ZoO9AVE6PyNLzF7tLeA==}
+    dev: false
+
+  /@tanstack/react-query@4.36.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-y7ySVHFyyQblPl3J3eQBWpXZkliroki3ARnBKsdJchlgt7yJLRDUcf4B8soufgiYt3pEQIkBWBx1N9/ZPIeUWw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    dependencies:
+      '@tanstack/query-core': 4.36.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      use-sync-external-store: 1.2.0(react@18.2.0)
+    dev: false
+
+  /@trpc/client@10.40.0(@trpc/server@10.40.0):
+    resolution: {integrity: sha512-bT6BcdWjj0KzGQiimE6rB2tIaRYX0Ear4Gthb5szN/c01wrP0yC1Fbz2uCcm/QTVAwu4Lve5M+YjPoEaTHG6lg==}
+    peerDependencies:
+      '@trpc/server': 10.40.0
+    dependencies:
+      '@trpc/server': 10.40.0
+    dev: false
+
+  /@trpc/next@10.40.0(@tanstack/react-query@4.36.1)(@trpc/client@10.40.0)(@trpc/react-query@10.40.0)(@trpc/server@10.40.0)(next@13.5.4)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-GMOiN+2DIfUXxS2DuTuTT3FOzkuB5p6+1QglY5M9ywKFWBVTGkBnbLkTgoPGuglq+dPfcZbcSajRN22AUv5Qtg==}
+    peerDependencies:
+      '@tanstack/react-query': ^4.18.0
+      '@trpc/client': 10.40.0
+      '@trpc/react-query': 10.40.0
+      '@trpc/server': 10.40.0
+      next: '*'
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      '@tanstack/react-query': 4.36.1(react-dom@18.2.0)(react@18.2.0)
+      '@trpc/client': 10.40.0(@trpc/server@10.40.0)
+      '@trpc/react-query': 10.40.0(@tanstack/react-query@4.36.1)(@trpc/client@10.40.0)(@trpc/server@10.40.0)(react-dom@18.2.0)(react@18.2.0)
+      '@trpc/server': 10.40.0
+      next: 13.5.4(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-ssr-prepass: 1.5.0(react@18.2.0)
+    dev: false
+
+  /@trpc/react-query@10.40.0(@tanstack/react-query@4.36.1)(@trpc/client@10.40.0)(@trpc/server@10.40.0)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-DpJrV3lmYNo9xtPtcg49lfh9CUFap3ZivjhlSmfe4QPf7H6xBjAE+ml4OdJ0RmKvSTFvbLSOiNdB1k5O8zIdzQ==}
+    peerDependencies:
+      '@tanstack/react-query': ^4.18.0
+      '@trpc/client': 10.40.0
+      '@trpc/server': 10.40.0
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      '@tanstack/react-query': 4.36.1(react-dom@18.2.0)(react@18.2.0)
+      '@trpc/client': 10.40.0(@trpc/server@10.40.0)
+      '@trpc/server': 10.40.0
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@trpc/server@10.40.0:
+    resolution: {integrity: sha512-49SUOMWzSZtu5+OdrADmJD+u+sjSE0qj1cWgYk2FY4jLkPJunLuNRuhzM7aOeBhiUjyfhg2YTfur8FN1WBmvEw==}
     dev: false
 
   /@types/body-parser@1.19.3:
@@ -2957,6 +3074,14 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
+  /prisma@5.4.2:
+    resolution: {integrity: sha512-GDMZwZy7mysB2oXU+angQqJ90iaPFdD0rHaZNkn+dio5NRkGLmMqmXs31//tg/qXT3iB0cTQwnGGQNuirhSTZg==}
+    engines: {node: '>=16.13'}
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      '@prisma/engines': 5.4.2
+
   /prop-types@15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
     dependencies:
@@ -3036,6 +3161,14 @@ packages:
       tslib: 2.6.2
       use-callback-ref: 1.3.0(@types/react@18.2.28)(react@18.2.0)
       use-sidecar: 1.1.2(@types/react@18.2.28)(react@18.2.0)
+    dev: false
+
+  /react-ssr-prepass@1.5.0(react@18.2.0):
+    resolution: {integrity: sha512-yFNHrlVEReVYKsLI5lF05tZoHveA5pGzjFbFJY/3pOqqjGOmMmqx83N4hIjN2n6E1AOa+eQEUxs3CgRnPmT0RQ==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react-style-singleton@2.2.1(@types/react@18.2.28)(react@18.2.0):

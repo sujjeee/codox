@@ -23,7 +23,7 @@ export default function TextAnimation() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 50 }}
                 transition={{ duration: 0.5 }}
-                className="scroll-m-20 text-2xl md:text-4xl font-extrabold tracking-tight lg:text-5xl"
+                className="scroll-m-20 text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight lg:text-5xl"
             >
                 {words[index]}
             </motion.h1>

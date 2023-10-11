@@ -22,7 +22,7 @@ export default function CodeBlock() {
                 </span>
             </span>
 
-            <CopyButton value="hello" />
+            <CopyButton />
         </pre>
     )
 }

@@ -4,7 +4,7 @@ import * as React from "react"
 import { CheckIcon, CopyIcon } from "@radix-ui/react-icons"
 
 import { Button } from "@/components/ui/button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { toast } from "sonner"
 import { event } from "@/lib/gtags"
 

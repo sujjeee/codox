@@ -73,4 +73,7 @@
   body {
     @apply bg-background text-foreground;
   }
+  .cl-internal-1ee916m{
+    max-height: 550px;
+  }
 }

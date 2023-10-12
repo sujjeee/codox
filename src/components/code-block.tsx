@@ -1,5 +1,5 @@
 import React from 'react'
-import { CopyButton } from './copy-button'
+import { CopyButton } from '@/components/copy-button'
 
 export default function CodeBlock() {
     return (

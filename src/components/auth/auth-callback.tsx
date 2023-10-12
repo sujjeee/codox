@@ -2,7 +2,7 @@
 
 import { trpc } from '@/app/_trpc/client'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { Icons } from '../icons'
+import { Icons } from '@/components/icons'
 
 export default function AuthCallback() {
     const router = useRouter()

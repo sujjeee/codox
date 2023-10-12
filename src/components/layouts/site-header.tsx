@@ -5,14 +5,15 @@ import { ThemeToggle } from '@/components/theme-toggle'
 import { Button, buttonVariants } from '@/components/ui/button'
 import Link from 'next/link'
 import useWindow from '@/hooks/use-window'
-import { UserButton, useAuth } from '@clerk/nextjs'
+import { useUser } from '@clerk/nextjs'
 import { usePathname } from 'next/navigation'
 import { Github } from 'lucide-react'
+import Profile from '@/components/profile'
 
 export default function SiteHeader() {
   const { isDesktop } = useWindow()
   const path = usePathname()
-  const user = useAuth();
+  const { isSignedIn, user } = useUser();
   return (
     <header className="md:container md:max-w-6xl px-4">
       <nav className='md:py-8 py-4 flex w-full justify-between items-center z-50'>
@@ -37,14 +38,13 @@ export default function SiteHeader() {
               variant: 'outline'
             })}>
             <Github className='h-5 w-5' />
-
             <span className="sr-only">github profile</span>
           </Link>
           <ThemeToggle />
           {
-            user?.userId ? (
+            isSignedIn ? (
               path === "/dashboard" ? (
-                <UserButton />
+                <Profile user={user} />
               ) : (
                 <Button className="flex" variant="outline" asChild>
                   <Link href="/dashboard">Dashboard</Link>

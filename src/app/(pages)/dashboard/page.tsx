@@ -13,16 +13,15 @@ export async function generateMetadata() {
 export default async function page() {
 
     const user = await currentUser()
+    if (!user || !user.id) redirect('/auth-callback?origin=/dashboard')
 
-    if (user) {
-        const dbUser = await db.user.findFirst({
-            where: {
-                id: user.id
-            }
-        })
+    const dbUser = await db.user.findFirst({
+        where: {
+            id: user.id
+        }
+    })
 
-        if (!dbUser) redirect('/auth-callback?origin=/dashboard')
-    }
+    if (!dbUser) redirect('/auth-callback?origin=/dashboard')
 
     return (
         <div className="h-[50vh] w-full justify-center items-center flex px-4 flex-col ">

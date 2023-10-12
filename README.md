@@ -1,4 +1,4 @@
-# [CoDox](https://codox.vercel.app/) - a starter template for modern web development !
+# [CoDox](https://codox.vercel.app/) - starter template for modern web development !
 
 <kbd>
 <a href="https://codox.vercel.app">

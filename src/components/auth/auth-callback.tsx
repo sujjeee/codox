@@ -29,7 +29,7 @@ export default function AuthCallback() {
             <h3 className='font-semibold text-xl '>
                 Setting up your account
             </h3>
-            <p className='text-muted-foreground'>you will be redirect soon</p>
+            <p className='text-muted-foreground'>you will be redirected soon</p>
         </div>
     )
 }

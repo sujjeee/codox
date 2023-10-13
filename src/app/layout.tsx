@@ -18,9 +18,6 @@ export const metadata: Metadata = {
     template: `%s - CoDox`,
   },
   description: siteConfig.description,
-  verification: {
-    google: "5z2lDnQ6mdG9S2qZm74DNfOk3xdwLR-orzDHc5XiJxs"
-  },
   keywords: [
     "modern web development",
     "modern tech stacks",

@@ -2,6 +2,7 @@ import { privateProcedure, publicProcedure, router } from './trpc';
 import { TRPCError } from '@trpc/server';
 import { db } from '@/db';
 import { currentUser } from "@clerk/nextjs";
+import { getUserEmail } from '@/lib/utils';
 
 export const appRouter = router({
     testroute: publicProcedure.query(() => 'Say this is test route!'),
@@ -9,11 +10,13 @@ export const appRouter = router({
     authCallback: publicProcedure.query(async () => {
         const user = await currentUser();
 
+        const email = getUserEmail(user)
+
         if (!user?.id) throw new TRPCError({ code: 'UNAUTHORIZED' })
 
         const dbUser = await db.user.findFirst({
             where: {
-                id: user.id
+                email: email
             }
         })
 
@@ -21,7 +24,7 @@ export const appRouter = router({
             await db.user.create({
                 data: {
                     id: user.id,
-                    email: user.emailAddresses[0].emailAddress,
+                    email: email,
                     image: user.imageUrl,
                     username: user.username || null,
                     fullname: `${user.firstName} ${user.lastName}`

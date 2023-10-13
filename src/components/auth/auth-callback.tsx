@@ -3,6 +3,7 @@
 import { trpc } from '@/app/_trpc/client'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { Icons } from '@/components/icons'
+import { toast } from 'sonner'
 
 export default function AuthCallback() {
     const router = useRouter()
@@ -16,6 +17,7 @@ export default function AuthCallback() {
             }
         },
         onError: (err) => {
+            toast.error("AuthCallBack: Something went wrong!")
             if (err.data?.code === 'UNAUTHORIZED') {
                 router.push('/signin')
             }

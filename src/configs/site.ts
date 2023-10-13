@@ -1,7 +1,7 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "Modern web development stacks",
+  name: "Web Development Stacks",
   description:
     "A starter template for modern web development with nextjs 13 (app route), tailwindcss, typescript, trpc, clerk auth, and prisma.",
   url: "https://codox.vercel.app",

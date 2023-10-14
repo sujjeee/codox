@@ -26,12 +26,14 @@ export default function AuthCallback() {
     })
 
     return (
-        <div className='flex flex-col items-center gap-2  justify-center'>
-            <Icons.spinner className="mr-2 h-9 w-9 animate-spin" aria-hidden="true" />
-            <h3 className='font-semibold text-xl '>
-                Setting up your account
-            </h3>
-            <p className='text-muted-foreground'>you will be redirected soon</p>
+        <div className='flex flex-col items-center gap-6  justify-center'>
+            <Icons.configure className="h-9 w-9" aria-hidden="true" />
+            <div className="text-center">
+                <h3 className='font-semibold text-xl'>
+                    You are almost done.<br /> Your account is being configured.
+                </h3>
+                <p className='text-muted-foreground mt-2'> You will be redirected shortly.</p>
+            </div>
         </div>
     )
 }

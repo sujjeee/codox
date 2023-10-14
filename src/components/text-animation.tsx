@@ -1,20 +1,32 @@
 "use client"
 
+import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
-export default function TextAnimation() {
-    const words = ["NextJS", "ShadcnUI", "Tailwind", "Typescript", "tRPC", "Clerk", "Prisma"];
+
+type TextAnimationProps = {
+    words: string[];
+    interval?: number;
+    className?: string;
+};
+export default function TextAnimation({
+    words,
+    interval = 3000,
+    className,
+}: TextAnimationProps) {
+
     const [index, setIndex] = React.useState(0);
 
     React.useEffect(() => {
-        const interval = setInterval(() => {
+        const animationInterval = setInterval(() => {
             setIndex((prevIndex) => (prevIndex + 1) % words.length);
-        }, 3000);
+        }, interval);
 
         // Clean up interval on unmount
-        return () => clearInterval(interval);
+        return () => clearInterval(animationInterval);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
     return (
         <AnimatePresence mode="wait">
             <motion.h1
@@ -23,7 +35,10 @@ export default function TextAnimation() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 50 }}
                 transition={{ duration: 0.5 }}
-                className="scroll-m-20 text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight lg:text-5xl"
+                className={cn(
+                    "scroll-m-20 font-extrabold tracking-tight",
+                    className
+                )}
             >
                 {words[index]}
             </motion.h1>

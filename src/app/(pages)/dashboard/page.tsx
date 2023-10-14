@@ -36,7 +36,7 @@ export default async function page() {
                 Hi {user ? user?.firstName : 'Guest'}!
             </h1>
             <p className="leading-7 [&:not(:first-child)]:mt-6  max-w-md text-center text-muted-foreground">
-                Are you excited to build something amazing using {<br />}the latest technologies and stacks?
+                Are you excited to build something amazing using {<br className='hidden sm:flex' />}the latest technologies and stacks?
             </p>
             <div className='relative '>
                 <CodeBlock />

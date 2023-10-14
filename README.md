@@ -1,8 +1,8 @@
-# [CoDox](https://codox.vercel.app/) - starter template for modern web development !
+# [CoDox](https://codox.codebustar.com/) - starter template for modern web development !
 
 <kbd>
-<a href="https://codox.vercel.app">
-  <img alt="CoDox – A starter template for modern web development with nextjs 13 (app route), tailwindcss, typescript, trpc, clerk auth, and prisma." src="https://codox.vercel.app/og-image.png">
+<a href="https://codox.codebustar.com/">
+  <img alt="CoDox – A starter template for modern web development with nextjs 13 (app route), tailwindcss, typescript, trpc, clerk auth, and prisma." src="https://codox.codebustar.com/og-image.png">
 </a>
 </kbd>
 
@@ -53,4 +53,4 @@ pnpm dev
 ```
 
 ## Preview 👀
-See the preview  —  <a href="https://codox.vercel.app">CoDox</a>
+See the preview  —  <a href="https://codox.codebustar.com/">CoDox</a>

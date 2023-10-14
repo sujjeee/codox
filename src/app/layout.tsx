@@ -12,7 +12,7 @@ import GoogleAnalytics from '@/google-analytics'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://codox.vercel.app"),
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.name,
     template: `%s - CoDox`,

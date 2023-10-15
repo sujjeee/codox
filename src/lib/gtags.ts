@@ -1,6 +1,6 @@
 // original: https://dany-rivera.medium.com/how-to-integrate-google-analytics-on-your-next-js-13-app-easy-guide-c7389666831c
 
-import { env } from "../env.mjs";
+import { env } from "@/env.mjs";
 
 export const GA_TRACKING_ID: string | undefined = env.NEXT_PUBLIC_GOOGLE_ID;
 

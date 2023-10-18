@@ -2,9 +2,13 @@
 
 import * as React from "react"
 import { CheckIcon, CopyIcon } from "@radix-ui/react-icons"
-
 import { Button } from "@/components/ui/button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger
+} from "@/components/ui/dropdown-menu"
 import { toast } from "sonner"
 import { event } from "@/lib/gtags"
 
@@ -35,7 +39,7 @@ export function CopyButton() {
                 <Button
                     variant="outline"
                     size="sm"
-                    className="absolute right-3 z-50 h-8 w-8 px-0 -translate-y-2/4 top-2/4"
+                    className="absolute right-3 z-30 h-8 w-8 px-0 -translate-y-2/4 top-2/4"
                 >
                     {isCopied ? (
                         <CheckIcon className="h-4 w-4" aria-hidden="true" />
@@ -59,6 +63,13 @@ export function CopyButton() {
                         label: "ghcli_copy_click"
                     })}>
                     GitHub CLI
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                    onClick={() => copytoclipboard({
+                        text: "npx codox",
+                        label: "npx_codox"
+                    })}>
+                    npx
                 </DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>

@@ -1,15 +1,15 @@
-import '@/styles/globals.css'
-import type { Metadata } from 'next'
-import { siteConfig } from '@/configs/site'
-import { Inter } from 'next/font/google'
-import { ThemeProvider } from '@/components/providers/theme-providers'
-import { Toaster } from '@/components/ui/toaster'
-import { ClerkProvider } from '@clerk/nextjs'
-import { dark } from '@clerk/themes';
-import TrpcProvider from '@/components/providers/trpc-provider'
-import GoogleAnalytics from '@/google-analytics'
+import "@/styles/globals.css";
+import type { Metadata, Viewport } from "next";
+import { siteConfig } from "@/configs/site";
+import { Inter } from "next/font/google";
+import { ThemeProvider } from "@/components/providers/theme-providers";
+import { Toaster } from "@/components/ui/toaster";
+import { ClerkProvider } from "@clerk/nextjs";
+import { dark } from "@clerk/themes";
+import TrpcProvider from "@/components/providers/trpc-provider";
+import GoogleAnalytics from "@/google-analytics";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -50,10 +50,6 @@ export const metadata: Metadata = {
     },
   ],
   creator: siteConfig.author.name,
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -73,17 +69,25 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
-}
+};
+
+export const viewport: Viewport = {
+  colorScheme: "dark light",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <ClerkProvider
       appearance={{
-        baseTheme: dark
+        baseTheme: dark,
       }}
     >
       <TrpcProvider>
@@ -103,5 +107,5 @@ export default function RootLayout({
         </html>
       </TrpcProvider>
     </ClerkProvider>
-  )
+  );
 }

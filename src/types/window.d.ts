@@ -1,3 +1,4 @@
 interface Window {
-    gtag: (command: string, ...params: any[]) => void;
+  // biome-ignore lint: "TODO: Fix this later"
+  gtag: (command: string, ...params: any[]) => void;
 }

@@ -5,12 +5,11 @@ import { getUserEmail } from "@/lib/utils";
 import { currentUser } from "@clerk/nextjs";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import React from "react";
 
 export async function generateMetadata() {
   const user = await currentUser();
   return {
-    title: `${user?.firstName}'s`,
+    title: `${user?.firstName}'s`
   };
 }
 
@@ -22,8 +21,8 @@ export default async function page() {
 
   const dbUser = await db.user.findUnique({
     where: {
-      email: email,
-    },
+      email: email
+    }
   });
 
   if (!dbUser) redirect("/auth-callback?origin=/dashboard");

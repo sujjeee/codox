@@ -1,38 +1,40 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 type WindowSize = {
-    width: number | undefined;
-    height: number | undefined;
+  width: number | undefined;
+  height: number | undefined;
 };
 
 type WindowDimensions = {
-    windowSize: WindowSize;
-    isMobile: boolean;
-    isDesktop: boolean;
+  windowSize: WindowSize;
+  isMobile: boolean;
+  isDesktop: boolean;
 };
 
 export default function useWindow(): WindowDimensions {
-    const [windowSize, setWindowSize] = useState<WindowSize>({
-        width: undefined,
-        height: undefined,
-    });
+  const [windowSize, setWindowSize] = useState<WindowSize>({
+    width: undefined,
+    height: undefined
+  });
 
-    useEffect(() => {
-        const handleResize = () => {
-            setWindowSize({
-                width: window.innerWidth,
-                height: window.innerHeight,
-            });
-        };
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    };
 
-        window.addEventListener("resize", handleResize);
-        handleResize();
+    window.addEventListener("resize", handleResize);
+    handleResize();
 
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-    const isMobile: boolean = typeof windowSize.width === "number" && windowSize.width < 768;
-    const isDesktop: boolean = typeof windowSize.width === "number" && windowSize.width >= 768;
+  const isMobile: boolean =
+    typeof windowSize.width === "number" && windowSize.width < 768;
+  const isDesktop: boolean =
+    typeof windowSize.width === "number" && windowSize.width >= 768;
 
-    return { windowSize, isMobile, isDesktop };
+  return { windowSize, isMobile, isDesktop };
 }

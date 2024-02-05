@@ -9,6 +9,6 @@ export const siteConfig = {
   author: {
     name: "sujjeee",
     twitter: "https://twitter.com/sujjeeee",
-    github: "https://github.com/sujjeee",
-  },
+    github: "https://github.com/sujjeee"
+  }
 };

@@ -1,29 +1,38 @@
 // source : https://github.com/sadmann7/skateshop/blob/main/src/components/layouts/site-header.tsx
 
+"use client";
 
-"use client"
-
-import React from 'react'
-import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
-import { Button } from '@/components/ui/button'
-import Link from 'next/link'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { getUserEmail } from '@/lib/utils'
-import { UserResource } from '@clerk/types'
-import { UserProfile } from '@/components/auth/user-profile'
-import { Home, LogOut, Settings, User2 } from 'lucide-react'
+import { UserProfile } from "@/components/auth/user-profile";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuTrigger
+} from "@/components/ui/dropdown-menu";
+import { getUserEmail } from "@/lib/utils";
+import type { UserResource } from "@clerk/types";
+import { Home, LogOut, Settings, User2 } from "lucide-react";
+import Link from "next/link";
+import React from "react";
 
 interface ProfileProps {
-  user: UserResource | null
+  user: UserResource | null;
 }
 
 export default function Profile({ user }: ProfileProps) {
+  const initials = `${user?.firstName?.charAt(0) ?? ""} ${
+    user?.lastName?.charAt(0) ?? ""
+  }`;
 
-  const initials = `${user?.firstName?.charAt(0) ?? ""} ${user?.lastName?.charAt(0) ?? ""}`
+  const email = getUserEmail(user);
 
-  const email = getUserEmail(user)
-
-  const [showUserProfile, setShowUserProfile] = React.useState(false)
+  const [showUserProfile, setShowUserProfile] = React.useState(false);
 
   const handleUserProfileClose = () => {
     setShowUserProfile(false);
@@ -31,7 +40,9 @@ export default function Profile({ user }: ProfileProps) {
 
   return (
     <>
-      {showUserProfile ? <UserProfile onCloseUserProfile={handleUserProfileClose} /> : null}
+      {showUserProfile ? (
+        <UserProfile onCloseUserProfile={handleUserProfileClose} />
+      ) : null}
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button
@@ -40,7 +51,10 @@ export default function Profile({ user }: ProfileProps) {
           >
             <Avatar className="h-10 w-10 border">
               <AvatarImage
-                src={user?.imageUrl ?? `https://avatar.vercel.sh/${Math.random()}.png`}
+                src={
+                  user?.imageUrl ??
+                  `https://avatar.vercel.sh/${Math.random()}.png`
+                }
                 alt={`${user?.firstName} ${user?.lastName}` ?? ""}
               />
               <AvatarFallback>{initials}</AvatarFallback>
@@ -61,21 +75,19 @@ export default function Profile({ user }: ProfileProps) {
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
             <DropdownMenuItem asChild>
-              <button onClick={() => setShowUserProfile(true)} className=' w-full justify-between'>
-                <User2
-                  className="mr-2 h-4 w-4"
-                  aria-hidden="true"
-                />
+              <button
+                type="submit"
+                onClick={() => setShowUserProfile(true)}
+                className=" w-full justify-between"
+              >
+                <User2 className="mr-2 h-4 w-4" aria-hidden="true" />
                 Account
                 <DropdownMenuShortcut>⇧⌘A</DropdownMenuShortcut>
               </button>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
               <Link href="/">
-                <Home
-                  className="mr-2 h-4 w-4"
-                  aria-hidden="true"
-                />
+                <Home className="mr-2 h-4 w-4" aria-hidden="true" />
                 Back Home
                 <DropdownMenuShortcut>⌘H</DropdownMenuShortcut>
               </Link>
@@ -99,5 +111,5 @@ export default function Profile({ user }: ProfileProps) {
         </DropdownMenuContent>
       </DropdownMenu>
     </>
-  )
+  );
 }

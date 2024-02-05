@@ -18,8 +18,7 @@
 - 🔒 [Clerk](https://clerk.com?utm_source=github&utm_medium=sponsorship&utm_campaign=nextjs-boilerplate) — A complete user management solution with authentication, profiles, and more
 - 📦 [Prisma](https://www.prisma.io/) — A modern ORM for Node.js and TypeScript that simplifies database access
 - ♻️ [T3 Env](https://env.t3.gg/) — A library for managing type-safe environment variables in Next.js
-- 🛠 [ESLint](https://eslint.org) — A tool for finding and fixing code issues and enforcing code style
-- 💖 [Prettier](https://prettier.io) — A code formatter for consistent and readable code style
+- 🛠 [BiomeJS](https://biomejs.dev/) — A tool for formatting, linting, and more in a fraction of a second.
 - 📊 [Google Analytics ](https://analytics.google.com/) — A web analytics service that tracks and reports website traffic
 
 ## Environment Variables 🌎

@@ -1,56 +1,55 @@
-import { privateProcedure, publicProcedure, router } from './trpc';
-import { TRPCError } from '@trpc/server';
-import { db } from '@/db';
+import { db } from "@/db";
+import { getUserEmail } from "@/lib/utils";
 import { currentUser } from "@clerk/nextjs";
-import { getUserEmail } from '@/lib/utils';
+import { TRPCError } from "@trpc/server";
+import { privateProcedure, publicProcedure, router } from "./trpc";
 
 export const appRouter = router({
-    testroute: publicProcedure.query(() => 'Say this is test route!'),
+  testroute: publicProcedure.query(() => "Say this is test route!"),
 
-    authCallback: publicProcedure.query(async () => {
-        const user = await currentUser();
+  authCallback: publicProcedure.query(async () => {
+    const user = await currentUser();
 
-        const email = getUserEmail(user)
+    const email = getUserEmail(user);
 
-        if (!user?.id) throw new TRPCError({ code: 'UNAUTHORIZED' })
+    if (!user?.id) throw new TRPCError({ code: "UNAUTHORIZED" });
 
-        const dbUser = await db.user.findFirst({
-            where: {
-                email: email
-            }
-        })
+    const dbUser = await db.user.findFirst({
+      where: {
+        email: email
+      }
+    });
 
-        if (!dbUser) {
-            await db.user.create({
-                data: {
-                    id: user.id,
-                    email: email,
-                    image: user.imageUrl,
-                    username: user.username || null,
-                    fullname: `${user.firstName} ${user.lastName}`
-                }
-            })
+    if (!dbUser) {
+      await db.user.create({
+        data: {
+          id: user.id,
+          email: email,
+          image: user.imageUrl,
+          username: user.username || null,
+          fullname: `${user.firstName} ${user.lastName}`
         }
-        return { success: true }
-    }),
+      });
+    }
+    return { success: true };
+  }),
 
-    getUser: privateProcedure.query(async ({ ctx }) => {
-        const { userId } = ctx;
-        const profiles = await db.user.findMany({
-            where: { id: userId },
-            select: {
-                id: true,
-                fullname: true
-            }
-        })
-        return profiles
-    }),
+  getUser: privateProcedure.query(async ({ ctx }) => {
+    const { userId } = ctx;
+    const profiles = await db.user.findMany({
+      where: { id: userId },
+      select: {
+        id: true,
+        fullname: true
+      }
+    });
+    return profiles;
+  }),
 
-    countUser: publicProcedure.query(async () => {
-        const totalUsers = await db.user.count();
-        return totalUsers
-    }),
-
+  countUser: publicProcedure.query(async () => {
+    const totalUsers = await db.user.count();
+    return totalUsers;
+  })
 });
 
 export type AppRouter = typeof appRouter;
